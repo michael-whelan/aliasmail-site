@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "aliasmail-site",
+  "compatibility_date": "2026-11-12",
+
+  // Static marketing/legal site for aliasmail.app (WEB-01). The API lives in the
+  // separate `aliasmail` worker on api.aliasmail.app; mail-forwarding kill links
+  // point at the API domain, so every request on this domain can be an asset.
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+
+  "routes": [{ "pattern": "aliasmail.app", "custom_domain": true }],
+  "workers_dev": false
+}
