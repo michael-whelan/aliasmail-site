@@ -1,0 +1,8 @@
+# Repo metadata that must not be published to aliasmail.app.
+README.md
+wrangler.jsonc
+.assetsignore
+.nojekyll
+.git
+.gitattributes
+.github

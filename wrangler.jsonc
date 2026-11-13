@@ -6,8 +6,11 @@
   // Static marketing/legal site for aliasmail.app (WEB-01). The API lives in the
   // separate `aliasmail` worker on api.aliasmail.app; mail-forwarding kill links
   // point at the API domain, so every request on this domain can be an asset.
+  // The site files live at the repo root so GitHub Pages can serve the same
+  // files at michaelwhelan.dev/aliasmail-site/; repo metadata is excluded
+  // from deploys via .assetsignore.
   "assets": {
-    "directory": "./public",
+    "directory": "./",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },

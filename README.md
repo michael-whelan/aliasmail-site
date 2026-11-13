@@ -28,5 +28,5 @@ first deploy claims the domain; Cloudflare manages DNS.
 
 ## Editing
 
-Everything is hand-written static HTML in `public/` — no build step, no
-dependencies. Keep the shared `<style>` block in sync across pages.
+Everything is hand-written static HTML at the repo root — no build step, no
+dependencies. Keep the shared `<style>` block in sync across pages. The same files are also served by GitHub Pages at michaelwhelan.dev/aliasmail-site/.
