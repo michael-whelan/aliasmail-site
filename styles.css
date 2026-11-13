@@ -34,7 +34,7 @@ img, svg { display: block; }
 .site-header .wrap { display: flex; align-items: center; gap: 32px; }
 .brand { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; color: var(--navy); letter-spacing: -0.2px; }
 .brand:hover { text-decoration: none; }
-.logo-mark { width: 34px; height: 34px; flex: none; }
+.logo-mark { width: 44px; height: 44px; flex: none; filter: drop-shadow(0 4px 10px rgba(59, 130, 246, 0.35)); }
 .site-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
 .site-nav a.nav-link { color: var(--body); font-weight: 600; font-size: 15px; }
 .site-nav a.nav-link:hover { color: var(--navy); text-decoration: none; }
