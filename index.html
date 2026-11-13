@@ -5,71 +5,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alias Mail — One inbox. Many identities.</title>
   <meta name="description" content="Alias Mail gives you email aliases that forward to your real inbox. Kill an alias the moment it attracts spam.">
-  <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #0F1115; color: #ECEFF3; font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    a { color: #3B82F6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
-    header { display: flex; align-items: center; gap: 12px; padding: 24px 0 8px; }
-    .logo { width: 36px; height: 36px; border-radius: 10px; background: #3B82F6; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-    h1 { font-size: 22px; font-weight: 800; }
-    .hero { padding: 48px 0 24px; }
-    .hero h2 { font-size: 34px; line-height: 1.2; font-weight: 800; }
-    .hero p { color: #9AA3AE; font-size: 18px; margin-top: 12px; }
-    .badge { display: inline-block; background: #3B82F6; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1px; border-radius: 999px; padding: 4px 12px; margin-bottom: 16px; }
-    .card { background: #181B21; border: 1px solid #2A2F37; border-radius: 16px; padding: 20px; margin-top: 16px; }
-    .card h3 { font-size: 17px; margin-bottom: 8px; }
-    .card p, .card li { color: #9AA3AE; font-size: 15px; }
-    .card ul { padding-left: 20px; }
-    .cta { display: inline-block; background: #3B82F6; color: #fff; font-weight: 700; border-radius: 12px; padding: 14px 24px; margin-top: 20px; font-size: 16px; }
-    .cta:hover { text-decoration: none; opacity: 0.9; }
-    .cta.soon { background: #181B21; color: #9AA3AE; border: 1px solid #2A2F37; }
-    footer { border-top: 1px solid #2A2F37; margin-top: 48px; padding-top: 20px; color: #9AA3AE; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
-    .trust { background: #181B21; border-left: 3px solid #3B82F6; border-radius: 8px; padding: 14px 16px; margin-top: 24px; color: #ECEFF3; font-size: 15px; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Set to the real Play Store listing once published.
+    var PLAY_STORE_URL = "https://play.google.com/store/apps?id=app.aliasmail";
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">✉️</div>
-      <h1>Alias Mail</h1>
-    </header>
+  <!-- Shared SVG defs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm8 7.2 7.4-4.7a.7.7 0 0 0-.76-1.18L12 10.7 4.36 6.32a.7.7 0 1 0-.72 1.18L11 12.2Z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3 5 6v5c0 4.6 3 8.4 7 10 4-1.6 7-5.4 7-10V6l-7-3Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.6" fill="currentColor"/></symbol>
+      <symbol id="i-power" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 3v8"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6.3 6.5a8 8 0 1 0 11.4 0"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3.5 2"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path fill="#34A853" d="M4.8 3.1c-.2-.1-.4-.1-.6 0l9.7 10.7 2.7-2.4-9.8-8.3Z"/><path fill="#4285F4" d="M4.2 20.9c.2.1.4.1.6 0l9.8-8.3-2.7-2.4L4.2 20.9Z"/><path fill="#FBBC04" d="m14.6 11.4-2.7-2.4-3 1.7c-.8.5-.8 1.6 0 2.1l3 1.7 2.7-2.4Z" transform="translate(0 -0.7)"/><path fill="#EA4335" d="m11.9 13.8-9.7 7.1c.2.1.4.1.6 0l11.8-4.7-2.7-2.4Z"/></symbol>
+    </defs>
+  </svg>
 
-    <section class="hero">
-      <span class="badge">EMAIL ALIASES</span>
-      <h2>One inbox.<br>Many identities.</h2>
-      <p>Give every shop, newsletter and app its own alias address. Mail arrives in your normal inbox — and when an alias starts attracting spam, kill it for good with one swipe.</p>
-      <a class="cta soon" href="#" aria-disabled="true">Get it on Google Play — soon</a>
-    </section>
-
-    <div class="trust">
-      We don't store your emails. We forward them and keep only basic delivery info (sender, subject, time) for 30 days.
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="logo-tile"><svg width="22" height="22"><use href="#i-mail" style="color:#fff"/></svg></span>
+        alias mail
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a class="nav-link" href="privacy.html">Privacy</a>
+        <a class="nav-link" href="terms.html">Terms</a>
+        <a class="btn small nav-cta play-link" href="https://play.google.com/store/apps?id=app.aliasmail">
+          <svg width="18" height="18"><use href="#i-play"/></svg> Get on Google Play
+        </a>
+      </nav>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMenu(this)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-
-    <section class="card">
-      <h3>How it works</h3>
-      <ul>
-        <li><strong style="color:#ECEFF3">Create</strong> an alias for whatever you're signing up to — shopping, newsletters, gaming, anything.</li>
-        <li><strong style="color:#ECEFF3">Use it</strong> instead of your real address. Everything forwards straight to your inbox.</li>
-        <li><strong style="color:#ECEFF3">Kill it</strong> when it's no longer wanted. The address is retired and never reused, so the spam dies with it.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h3>Plans</h3>
-      <p><strong style="color:#ECEFF3">Free</strong> — 1 active alias, 30-day lifetime, 30 forwards a month. Kill and re-create as often as you like.</p>
-      <p style="margin-top:8px"><strong style="color:#ECEFF3">Plus</strong> — €1.99/month or €14.99/year: 5 live aliases, custom expiry (or never-expiring aliases), 500 forwards a month, and one-tap "new address" refresh that keeps the name.</p>
-    </section>
-
-    <footer>
-      <span>© 2026 Alias Mail</span>
-      <a href="privacy.html">Privacy policy</a>
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="delete-account.html">Delete account</a>
+      <a class="btn play-link" href="https://play.google.com/store/apps?id=app.aliasmail">
+        <svg width="18" height="18"><use href="#i-play"/></svg> Get on Google Play
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="wrap">
+      <div>
+        <span class="pill"><svg width="16" height="16"><use href="#i-shield"/></svg> Your inbox, protected</span>
+        <h1>One inbox.<br><span class="accent">Many identities.</span></h1>
+        <p class="lede">Create unique email addresses for every website and service. Everything forwards to your real inbox. No sharing your personal address, no unwanted subscriptions taking over.</p>
+        <a class="btn big play-link" href="https://play.google.com/store/apps?id=app.aliasmail">
+          <svg width="20" height="20"><use href="#i-play"/></svg> Get Alias Mail on Google Play
+        </a>
+      </div>
+      <div class="phone-zone">
+        <svg class="sparkle" style="top:-8px;right:12%" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg>
+        <svg class="sparkle" style="bottom:14%;left:2%" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg>
+        <div class="phone" role="img" aria-label="The Alias Mail app showing three active aliases">
+          <div class="phone-screen">
+            <div class="phone-status"><span>9:41</span><span class="gear">⚙</span></div>
+            <div class="phone-title">Your Aliases</div>
+            <div class="alias-row">
+              <span class="at">@</span>
+              <span class="who"><span class="addr">shopping@aliasmail.app</span><br><span class="cat">Online shopping</span></span>
+              <span class="meta"><span class="chip">Active</span><div class="count">12 emails</div></span>
+            </div>
+            <div class="alias-row">
+              <span class="at">@</span>
+              <span class="who"><span class="addr">news@aliasmail.app</span><br><span class="cat">Newsletters</span></span>
+              <span class="meta"><span class="chip">Active</span><div class="count">8 emails</div></span>
+            </div>
+            <div class="alias-row">
+              <span class="at">@</span>
+              <span class="who"><span class="addr">accounts@aliasmail.app</span><br><span class="cat">Online accounts</span></span>
+              <span class="meta"><span class="chip">Active</span><div class="count">4 emails</div></span>
+            </div>
+            <div class="phone-footer"><span>One real inbox. Multiple identities.</span><span class="prot">✓ Protected</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <div class="grid">
+        <div class="feature">
+          <div class="icon"><svg width="22" height="22"><use href="#i-lock"/></svg></div>
+          <h3>Keep your address private</h3>
+          <p>Never hand out your personal email unnecessarily.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg width="22" height="22"><use href="#i-mail"/></svg></div>
+          <h3>Everything forwarded</h3>
+          <p>Use your existing inbox. No second inbox to check.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg width="22" height="22"><use href="#i-power"/></svg></div>
+          <h3>Switch off unwanted mail</h3>
+          <p>Disable an alias when it becomes a nuisance.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg width="22" height="22"><use href="#i-clock"/></svg></div>
+          <h3>Aliases with a lifespan</h3>
+          <p>See how long an alias has been active and manage it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner-zone">
+    <div class="wrap">
+      <div class="banner">
+        <svg class="banner-art" width="180" height="140" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
+        <div>
+          <h2>Your email. Your rules.</h2>
+          <p>Take back control of who can reach your inbox.</p>
+        </div>
+        <a class="btn big play-link" style="margin-left:auto" href="https://play.google.com/store/apps?id=app.aliasmail">
+          <svg width="20" height="20"><use href="#i-play"/></svg> Get Alias Mail
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans">
+    <div class="wrap">
+      <h2>Simple plans</h2>
+      <div class="grid">
+        <div class="plan">
+          <span class="tag">Free</span>
+          <div class="price">€0 <span>forever</span></div>
+          <ul>
+            <li>1 active alias</li>
+            <li>30-day alias lifetime</li>
+            <li>30 forwards a month</li>
+            <li>Kill and re-create as often as you like</li>
+          </ul>
+        </div>
+        <div class="plan plus">
+          <span class="tag">Plus</span>
+          <div class="price">€1.99 <span>/month · or €14.99/year</span></div>
+          <ul>
+            <li>5 live aliases</li>
+            <li>Custom expiry — or never expiring</li>
+            <li>500 forwards a month</li>
+            <li>One-tap "new address" refresh that keeps the name</li>
+          </ul>
+        </div>
+      </div>
+      <p class="trust"><svg width="16" height="16" style="flex:none;transform:translateY(2px);color:#3B82F6"><use href="#i-shield"/></svg><span><strong>We don't store your emails.</strong> We forward them and keep only basic delivery info (sender, subject, time) for 30 days.</span></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Alias Mail</span>
       <span>support@aliasmail.app</span>
-    </footer>
-  </div>
+      <div class="links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="delete-account.html">Delete account</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(btn) {
+      var nav = document.querySelector(".mobile-nav");
+      var open = nav.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    // Point every Play CTA at the single configured URL.
+    document.querySelectorAll(".play-link").forEach(function (a) {
+      if (typeof PLAY_STORE_URL === "string") a.href = PLAY_STORE_URL;
+    });
+  </script>
 </body>
 </html>
