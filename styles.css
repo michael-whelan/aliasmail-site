@@ -86,9 +86,10 @@ img, svg { display: block; }
 }
 
 /* ---------- hero phone image ---------- */
+.phone-zone { position: relative; display: flex; justify-content: center; }
+.phone-accents { position: absolute; top: -14px; right: 4%; }
 .hero-phone {
   width: min(100%, 400px); height: auto;
-  justify-self: center;
   filter: drop-shadow(0 30px 40px rgba(37, 99, 235, 0.18));
 }
 
@@ -107,6 +108,12 @@ img, svg { display: block; }
 .banner h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.5px; }
 .banner p { color: var(--body); margin-top: 6px; }
 .banner .btn { flex: none; position: relative; z-index: 1; }
+.banner-blob {
+  position: absolute; right: -30px; bottom: -110px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--tint-strong), var(--tint) 62%, transparent 76%);
+  pointer-events: none;
+}
 .banner-art {
   position: absolute; right: -70px; bottom: -75px;
   width: 380px; height: auto;
@@ -175,7 +182,9 @@ img, svg { display: block; }
   .mobile-nav a:last-child { border-bottom: 0; }
   .mobile-nav .btn { margin-top: 8px; justify-content: center; }
   .hero { padding: 32px 0 56px; }
+  .phone-accents { width: 40px; height: 40px; top: -10px; right: 2%; }
   .banner-art { width: 260px; right: -55px; bottom: -55px; }
+  .banner-blob { width: 230px; height: 230px; right: -20px; bottom: -85px; }
   .features .grid { grid-template-columns: 1fr; }
   .feature { border-left: 0; padding: 0; }
   .site-footer .links { margin-left: 0; }
