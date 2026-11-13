@@ -40,6 +40,12 @@ img, svg { display: block; }
 .site-nav a.nav-link:hover { color: var(--navy); text-decoration: none; }
 .nav-cta { display: inline-flex; }
 
+/* ---------- Google Play badge ---------- */
+.play-link { display: inline-flex; border-radius: 10px; transition: transform 0.15s ease; }
+.play-link:hover { transform: translateY(-1px); }
+.play-badge { height: 42px; width: auto; display: block; }
+.play-badge.big { height: 56px; }
+
 /* hamburger (mobile) */
 .menu-btn { display: none; margin-left: auto; background: none; border: 0; padding: 8px; cursor: pointer; border-radius: 10px; }
 .menu-btn:hover { background: var(--tint); }
@@ -80,26 +86,12 @@ img, svg { display: block; }
 }
 .sparkle { position: absolute; color: var(--blue); z-index: 2; }
 
-/* ---------- phone mockup ---------- */
-.phone-zone { position: relative; display: flex; justify-content: center; }
-.phone {
-  width: 290px; background: #0B1220; border-radius: 38px; padding: 12px;
-  box-shadow: var(--shadow); transform: rotate(-3deg); position: relative; z-index: 1;
+/* ---------- hero phone image ---------- */
+.hero-phone {
+  width: min(100%, 400px); height: auto;
+  justify-self: center;
+  filter: drop-shadow(0 30px 40px rgba(37, 99, 235, 0.18));
 }
-.phone-screen { background: #F6F8FC; border-radius: 28px; overflow: hidden; padding: 18px 16px 20px; }
-.phone-status { display: flex; justify-content: space-between; align-items: center; color: var(--navy); font-size: 12px; font-weight: 700; padding: 0 4px 12px; }
-.phone-status .gear { color: var(--muted); }
-.phone-title { font-size: 18px; font-weight: 800; margin-bottom: 12px; }
-.alias-row { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 14px; padding: 10px 12px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06); }
-.alias-row .at { width: 30px; height: 30px; border-radius: 50%; background: var(--tint); color: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex: none; }
-.alias-row .who { min-width: 0; }
-.alias-row .addr { font-size: 12.5px; font-weight: 700; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.alias-row .cat { font-size: 11px; color: var(--muted); }
-.alias-row .meta { text-align: right; flex: none; }
-.chip { display: inline-block; background: #DCFCE7; color: #15803D; font-size: 10px; font-weight: 800; border-radius: 999px; padding: 2px 8px; }
-.alias-row .count { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
-.phone-footer { display: flex; justify-content: space-between; align-items: center; font-size: 10.5px; color: var(--muted); padding: 6px 4px 0; }
-.phone-footer .prot { display: inline-flex; align-items: center; gap: 4px; color: #15803D; font-weight: 700; }
 
 /* ---------- features ---------- */
 .features { padding: 24px 0 72px; }
@@ -116,7 +108,12 @@ img, svg { display: block; }
 .banner h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.5px; }
 .banner p { color: var(--body); margin-top: 6px; }
 .banner .btn { flex: none; position: relative; z-index: 1; }
-.banner-art { position: absolute; right: 180px; bottom: -30px; opacity: 0.16; color: var(--blue); pointer-events: none; }
+.banner-art {
+  position: absolute; right: -70px; bottom: -75px;
+  width: 380px; height: auto;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
 
 /* ---------- plans ---------- */
 .plans { padding: 0 0 88px; }
@@ -164,6 +161,7 @@ img, svg { display: block; }
   .features .grid { grid-template-columns: 1fr 1fr; gap: 28px 0; }
   .feature:nth-child(3) { border-left: 0; padding-left: 0; }
   .banner { flex-direction: column; align-items: flex-start; padding: 32px; }
+  .banner > div { position: relative; z-index: 1; }
   .plans .grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
@@ -178,7 +176,7 @@ img, svg { display: block; }
   .mobile-nav a:last-child { border-bottom: 0; }
   .mobile-nav .btn { margin-top: 8px; justify-content: center; }
   .hero { padding: 32px 0 56px; }
-  .phone { transform: none; }
+  .banner-art { width: 260px; right: -55px; bottom: -55px; }
   .features .grid { grid-template-columns: 1fr; }
   .feature { border-left: 0; padding: 0; }
   .site-footer .links { margin-left: 0; }
