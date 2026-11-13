@@ -84,7 +84,6 @@ img, svg { display: block; }
   background: radial-gradient(circle at 35% 35%, var(--tint-strong), var(--tint) 60%, transparent 75%);
   opacity: 0.8; z-index: 0; pointer-events: none;
 }
-.sparkle { position: absolute; color: var(--blue); z-index: 2; }
 
 /* ---------- hero phone image ---------- */
 .hero-phone {
